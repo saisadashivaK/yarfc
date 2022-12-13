@@ -1,0 +1,24 @@
+Terminals - DOUBLE_COLON, STYLE, LITERAL, SEMICOLON, ARROW, COLON, LIST_BEGIN, LIST_END, NAME, 
+            SECTION, DASH, COMMA, ROW_DELIMITER
+
+program -> style block                                 :    program['sections'].append(block); program['style'] = style;      
+style -> SECTION STYLE DOUBLE_COLON element_list       :    style = {config: map(lambda el: el.properties, element_list.list)}
+block -> SECTION LITERAL DOUBLE_COLON rowgroup block   :    block = {name: LITERAL.lexeme, rows: rowgroup.rows}   
+block -> SECTION LITERAL DOUBLE_COLON rowgroup         :    block = {name: LITERAL.lexeme, rows: rowgroup.rows}   
+rowgroup -> ROW_DELIMITER element_list rowgroup        :    rowgroup.rows.append(element_list)
+rowgroup -> ROW_DELIMITER element_list ROW_DELIMITER   :    rowgroup.rows.append(element_list)
+element_list -> element SEMICOLON element_list         :    element_list.list.append(element)
+element_list -> element SEMICOLON                      :    element_list.list.append(element)
+element -> DASH id ARROW key_value_pairs               :    element = {id: key_value_pairs}
+key_value_pairs -> key COLON value COMMA key_value_pairs   :    key_value_pairs[0][key] = value
+key_value_pairs -> key COLON value                     :    key_value_pairs[key] = value
+id -> NAME                                             :    id = {type: 'NAME', value: NAME.lexeme}
+id -> LITERAL                                          :    id = {type: 'LITERAL', value: LITERAL.lexeme}
+key -> NAME                                            :    key = {type: 'NAME', value: NAME.lexeme}
+key -> LITERAL                                         :    key = {type: 'LITERAL', value: LITERAL.lexeme}
+value -> NAME                                          :    value = {type: 'NAME', value: NAME.lexeme}
+value -> LITERAL                                       :    value = {type: 'LITERAL', value: LITERAL.lexeme}
+value -> LIST_BEGIN option_list LIST_END               :    value = {type: 'LIST', value: option_list.list}
+value -> LIST_BEGIN LIST_END                           :    value = {type: 'LIST', value: []}
+option_list -> LITERAL COLON LITERAL COMMA option_list :    option_list[0].list.append({LITERAL[0].lexeme: LITERAL[1].lexeme})
+option_list -> LITERAL COLON LITERAL                   :    option_list.list.append({LITERAL[0].lexeme: LITERAL[1].lexeme})

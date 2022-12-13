@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./form1.css">
+    <title>Form1</title>
+</head>
+<body>
+    <h1>Sairam</h1>
+    <form>
+        <section class="form-container">
+            <h2>Section 1</h2>
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input name="name" type="text"/>
+                    <p name="validation1" class="error">Something's wrong</p>
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="dob">Date of Birth</label>
+                <input name="dob" type="date" />
+        
+                <label for="gender">Gender</label>
+                <select name="gender" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="na">Prefer not to say</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="phone_number">Contact Number</label>
+                <input name="phone_number" type="tel" pattern="[0-9]{10}" />
+            </div>
+            <div class="form-row">
+                <label for="middle_name">Finished 10th class</label>
+                <input name="middle_name" type="checkbox" />
+            </div>
+        </section>
+    
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+section style::
+- dimensions -> width: "400px", height: "300px";
+
+section "Section 1"::
+---
+- name -> type: text, label: Name, placeholder: "First Name";
+---
+- dob -> type: date, label: "Date of Birth";
+---
+- contact_number -> type: tel, label: "Contact Number";
+- class_10_status -> type: checkbox, default: true, label:"Class 10th status", validation: false;
+---
+- address_line_1 -> type: text, label: "Address line 1";
+---
+- address_line_2 -> type: text, label: "Address line 2";
+---
+- address_line_3 -> type: text, label: "Address line 3";
+---
+

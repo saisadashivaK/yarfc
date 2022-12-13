@@ -1,0 +1,140 @@
+{
+    "style": {
+        "config": [
+            {
+                "dimensions": {
+                    "width": {
+                        "type": "LITERAL",
+                        "value": "400px"
+                    },
+                    "height": {
+                        "type": "LITERAL",
+                        "value": "300px"
+                    }
+                }
+            }
+        ]
+    },
+    "sections": [
+        {
+            "section_name": "Section 1",
+            "rows": [
+                [
+                    {
+                        "id": "name",
+                        "properties": {
+                            "type": {
+                                "type": "NAME",
+                                "value": "text"
+                            },
+                            "label": {
+                                "type": "NAME",
+                                "value": "Name"
+                            },
+                            "placeholder": {
+                                "type": "LITERAL",
+                                "value": "First Name"
+                            }
+                        }
+                    }
+                ],
+                [
+                    {
+                        "id": "dob",
+                        "properties": {
+                            "type": {
+                                "type": "NAME",
+                                "value": "date"
+                            },
+                            "label": {
+                                "type": "LITERAL",
+                                "value": "Date of Birth"
+                            }
+                        }
+                    }
+                ],
+                [
+                    {
+                        "id": "contact_number",
+                        "properties": {
+                            "type": {
+                                "type": "NAME",
+                                "value": "tel"
+                            },
+                            "label": {
+                                "type": "LITERAL",
+                                "value": "Contact Number"
+                            }
+                        }
+                    },
+                    {
+                        "id": "class_10_status",
+                        "properties": {
+                            "type": {
+                                "type": "NAME",
+                                "value": "checkbox"
+                            },
+                            "default": {
+                                "type": "NAME",
+                                "value": "true"
+                            },
+                            "label": {
+                                "type": "LITERAL",
+                                "value": "Class 10th status"
+                            },
+                            "validation": {
+                                "type": "NAME",
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                [
+                    {
+                        "id": "address_line_1",
+                        "properties": {
+                            "type": {
+                                "type": "NAME",
+                                "value": "text"
+                            },
+                            "label": {
+                                "type": "LITERAL",
+                                "value": "Address line 1"
+                            }
+                        }
+                    }
+                ],
+                [
+                    {
+                        "id": "address_line_2",
+                        "properties": {
+                            "type": {
+                                "type": "NAME",
+                                "value": "text"
+                            },
+                            "label": {
+                                "type": "LITERAL",
+                                "value": "Address line 2"
+                            }
+                        }
+                    }
+                ],
+                [
+                    {
+                        "id": "address_line_3",
+                        "properties": {
+                            "type": {
+                                "type": "NAME",
+                                "value": "text"
+                            },
+                            "label": {
+                                "type": "LITERAL",
+                                "value": "Address line 3"
+                            }
+                        }
+                    }
+                ]
+            ]
+        }
+    ]
+}
